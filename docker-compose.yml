@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  app:
+    image: santoshkumar711/pythonwithdb-app:v1
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+
+  db:
+    image: mariadb:10.11
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: santoor711
+      MYSQL_DATABASE: python
+      MYSQL_USER: santosh
+      MYSQL_PASSWORD: santoor711
+    ports:
+      - "3306:3306"
+    command: --init-file /docker-entrypoint-initdb.d/init.sql
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql   # init.sql load ke liye
+      - db_data:/var/lib/mysql                           # data ko persist karne ke liye
+
+volumes:
+  db_data:
