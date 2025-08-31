@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         DOCKER_HUB_USER = 'santoshkumar711'
-        IMAGE_NAME = 'student-app'
+        IMAGE_NAME = 'pythonwithdb-app'
         IMAGE_TAG = 'v1'
     }
 
