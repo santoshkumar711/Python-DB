@@ -15,7 +15,7 @@ def get_db_connection():
 
 @app.route('/')
 def home():
-    return "Welcome to Student Records API! 🎉, welocme to Database deployment in EC2 with Docker with jenkins auto deployment."
+    return "Welcome to Student Records API! 🎉, welocme to Database deployment."
 
 # Add new student
 @app.route('/add_student', methods=['POST'])
